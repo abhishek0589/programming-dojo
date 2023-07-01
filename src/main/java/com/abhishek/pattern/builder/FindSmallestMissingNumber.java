@@ -26,7 +26,7 @@ public class FindSmallestMissingNumber {
 		
 	}
 
-	// approach1- sort array and scan lower and upper bounds - n log n
+	// approach1- sort array and scan lower and upper bounds - n log n 
 	public int getSmallestPositiveInteger(int[] nums) {
 		if (nums.length == 0) {
 			return 1;
