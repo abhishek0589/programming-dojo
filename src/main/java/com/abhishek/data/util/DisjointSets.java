@@ -15,7 +15,7 @@ import java.util.Arrays;
 // 3 and 4 in same set but 3 in another set so merge those. 3*, 4 and 5 new set 
 // 2 and 1 in same set but 1 in another set so 0* 1 and 2 form another set
 // 2 and in diff sets so 0* 1 2 3 4 5 form a single set
-
+// Union find/ Union-find
 public class DisjointSets {
 	public int[] connection;
 	
