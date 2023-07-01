@@ -1,0 +1,8 @@
+//generate RSA public and private token with a passphrase
+
+ssh-keygen -t rsa (edited)
+
+// append a token to a remote server
+
+cat <private key file path on local machine>  | ssh ge@35.160.232.65 “mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys”
+
