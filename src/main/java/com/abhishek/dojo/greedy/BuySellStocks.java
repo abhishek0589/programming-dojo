@@ -11,14 +11,15 @@ public class BuySellStocks {
 			return 0;
 		}
 		// to handle case of decreasing stock price. else we could have initialized buy price to some maximum value Integer.MAX_VALUE;
-		int buy = prices[0];
+		int intial_buy_price = prices[0];
 		//calculate initial profit
 		int profit = prices[1]-prices[0];  
 		for (int i = 1; i < prices.length; i++){
+			int current_price = prices[i];
 			// notice the sequence of below lines
 			// evaluate profit and then update buy price
-			profit = Math.max(prices[i] - buy, profit);
-			buy = Math.min(buy, prices[i]);
+			profit = Math.max(current_price - intial_buy_price, profit);
+			intial_buy_price = Math.min(intial_buy_price, current_price);
 		}
 		// no transactions if price keeps on descreasing
 		return profit < 0 ? 0 : profit;
@@ -27,7 +28,8 @@ public class BuySellStocks {
 	// buy at min price and see if you are able to maximize profit by selling at current price
 	public int maxProfit(int[] prices) {
 		if (prices.length < 2) return 0;
-        int buy = Integer.MAX_VALUE, profit = Integer.MIN_VALUE;
+        int buy = Integer.MAX_VALUE;
+        int profit = Integer.MIN_VALUE;
         for (int i = 0; i < prices.length; i++){
             buy = Math.min(buy, prices[i]);
             profit = Math.max(profit, prices[i] - buy);
